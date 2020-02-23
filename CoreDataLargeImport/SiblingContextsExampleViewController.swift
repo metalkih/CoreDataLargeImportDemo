@@ -48,7 +48,7 @@ class SiblingContextsExampleViewController: UIViewController {
         }
     }
     
-    func handleContextSaved(_ notification: Notification) {
+    @objc func handleContextSaved(_ notification: Notification) {
         let sender = notification.object as! NSManagedObjectContext
         if sender == dataController.backgroundContext {
             dataController.mainContext.perform { [weak self] in
